@@ -34,13 +34,17 @@ function App() {
 
   return (
     <>
-      <h1>NikeBet</h1>
+      <div className="container"></div>
+      <div className="loader">
+        <span>NikeBet</span>
+        <span>NikeBet</span>
+      </div>
       <h1>Comming 7/7/2027 as 7:07 💪💪</h1>
       <div className="card">
         <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#646cff' }}>
           {timeLeft}
         </div>
-      </div>
+        </div>
     </>
   )
 }
