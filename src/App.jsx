@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
-  const [timeLeft, setTimeLeft] = useState('')
+  const [timeData, setTimeData] = useState({ years: 0, months: 0, days: 0, hours: 0, minutes: 0, seconds: 0 })
 
   useEffect(() => {
     const targetDate = new Date('2027-07-07T19:07:00')
@@ -12,7 +12,7 @@ function App() {
       const diff = targetDate - now
       
       if (diff <= 0) {
-        setTimeLeft('Tempo esgotado!')
+        setTimeData({ years: 0, months: 0, days: 0, hours: 0, minutes: 0, seconds: 0 })
         return
       }
       
@@ -23,7 +23,7 @@ function App() {
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
       const seconds = Math.floor((diff % (1000 * 60)) / 1000)
       
-      setTimeLeft(`${years}a ${months}m ${days}d ${hours}h ${minutes}min ${seconds}s`)
+      setTimeData({ years, months, days, hours, minutes, seconds })
     }
     
     updateTimer()
@@ -31,6 +31,20 @@ function App() {
     
     return () => clearInterval(timer)
   }, [])
+
+  const FlipTimer = ({ value, label }) => {
+    const displayValue = value.toString().padStart(2, '0')
+    
+    return (
+      <div className="flip-unit">
+        <div className="flip-container">
+          <div className="simple-digit">{displayValue[0]}</div>
+          <div className="simple-digit">{displayValue[1]}</div>
+        </div>
+        <div className="flip-label">{label}</div>
+      </div>
+    )
+  }
 
   return (
     <>
@@ -40,11 +54,14 @@ function App() {
         <span>NikeBet</span>
       </div>
       <h1>Comming 7/7/2027 as 7:07 💪💪</h1>
-      <div className="card">
-        <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#646cff' }}>
-          {timeLeft}
-        </div>
-        </div>
+      <div className="countdown-wrapper">
+        <FlipTimer value={timeData.years} label="Anos" />
+        <FlipTimer value={timeData.months} label="Meses" />
+        <FlipTimer value={timeData.days} label="Dias" />
+        <FlipTimer value={timeData.hours} label="Horas" />
+        <FlipTimer value={timeData.minutes} label="Min" />
+        <FlipTimer value={timeData.seconds} label="Seg" />
+      </div>
     </>
   )
 }
