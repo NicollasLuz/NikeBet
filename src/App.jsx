@@ -53,7 +53,10 @@ function App() {
         <span>NikeBet</span>
         <span>NikeBet</span>
       </div>
-      <h1>Comming 7/7/2027 as 7:07 💪💪</h1>
+      <div className="title-card">
+        <div className="gradient-overlay"></div>
+        <p>Comming 7/7/2027 as 7:07 pm 💪💪</p>
+      </div>
       <div className="countdown-wrapper">
         <FlipTimer value={timeData.years} label="Anos" />
         <FlipTimer value={timeData.months} label="Meses" />

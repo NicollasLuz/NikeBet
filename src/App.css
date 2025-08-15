@@ -86,7 +86,7 @@ body, html {
   }
 }
 
-/* Container de plano de fundo com efeito de chuva */
+/* Container de plano de fundo listrado */
 .container {
   position: fixed;
   top: 0;
@@ -94,172 +94,17 @@ body, html {
   width: 100vw;
   height: 100vh;
   z-index: -1;
+  background: repeating-linear-gradient(
+    -45deg,
+    #333,
+    #000 10px,
+    #333 10px,
+    #000 20px
+  ) #000;
+  background-blend-mode: screen;
 }
 
-.container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  background-image: radial-gradient(4px 100px at 0px 235px, #0f0, #0000),
-    radial-gradient(4px 100px at 300px 235px, #0f0, #0000),
-    radial-gradient(1.5px 1.5px at 150px 117.5px, #0f0 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 252px, #0f0, #0000),
-    radial-gradient(4px 100px at 300px 252px, #0f0, #0000),
-    radial-gradient(1.5px 1.5px at 150px 126px, #0f0 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 150px, #0f0, #0000),
-    radial-gradient(4px 100px at 300px 150px, #0f0, #0000),
-    radial-gradient(1.5px 1.5px at 150px 75px, #0f0 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 253px, #0f0, #0000),
-    radial-gradient(4px 100px at 300px 253px, #0f0, #0000),
-    radial-gradient(1.5px 1.5px at 150px 126.5px, #0f0 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 204px, #0f0, #0000),
-    radial-gradient(4px 100px at 300px 204px, #0f0, #0000),
-    radial-gradient(1.5px 1.5px at 150px 102px, #0f0 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 134px, #0f0, #0000),
-    radial-gradient(4px 100px at 300px 134px, #0f0, #0000),
-    radial-gradient(1.5px 1.5px at 150px 67px, #0f0 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 179px, #0f0, #0000),
-    radial-gradient(4px 100px at 300px 179px, #0f0, #0000),
-    radial-gradient(1.5px 1.5px at 150px 89.5px, #0f0 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 299px, #0f0, #0000),
-    radial-gradient(4px 100px at 300px 299px, #0f0, #0000),
-    radial-gradient(1.5px 1.5px at 150px 149.5px, #0f0 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 215px, #0f0, #0000),
-    radial-gradient(4px 100px at 300px 215px, #0f0, #0000),
-    radial-gradient(1.5px 1.5px at 150px 107.5px, #0f0 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 281px, #0f0, #0000),
-    radial-gradient(4px 100px at 300px 281px, #0f0, #0000),
-    radial-gradient(1.5px 1.5px at 150px 140.5px, #0f0 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 158px, #0f0, #0000),
-    radial-gradient(4px 100px at 300px 158px, #0f0, #0000),
-    radial-gradient(1.5px 1.5px at 150px 79px, #0f0 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 210px, #0f0, #0000),
-    radial-gradient(4px 100px at 300px 210px, #0f0, #0000),
-    radial-gradient(1.5px 1.5px at 150px 105px, #0f0 100%, #0000 150%);
-  background-size:
-    300px 235px,
-    300px 235px,
-    300px 235px,
-    300px 252px,
-    300px 252px,
-    300px 252px,
-    300px 150px,
-    300px 150px,
-    300px 150px,
-    300px 253px,
-    300px 253px,
-    300px 253px,
-    300px 204px,
-    300px 204px,
-    300px 204px,
-    300px 134px,
-    300px 134px,
-    300px 134px,
-    300px 179px,
-    300px 179px,
-    300px 179px,
-    300px 299px,
-    300px 299px,
-    300px 299px,
-    300px 215px,
-    300px 215px,
-    300px 215px,
-    300px 281px,
-    300px 281px,
-    300px 281px,
-    300px 158px,
-    300px 158px,
-    300px 158px,
-    300px 210px,
-    300px 210px,
-    300px 210px;
-  animation: hi 150s linear infinite;
-}
 
-@keyframes hi {
-  0% {
-    background-position:
-      0px 220px,
-      3px 220px,
-      151.5px 337.5px,
-      25px 24px,
-      28px 24px,
-      176.5px 150px,
-      50px 16px,
-      53px 16px,
-      201.5px 91px,
-      75px 224px,
-      78px 224px,
-      226.5px 350.5px,
-      100px 19px,
-      103px 19px,
-      251.5px 121px,
-      125px 120px,
-      128px 120px,
-      276.5px 187px,
-      150px 31px,
-      153px 31px,
-      301.5px 120.5px,
-      175px 235px,
-      178px 235px,
-      326.5px 384.5px,
-      200px 121px,
-      203px 121px,
-      351.5px 228.5px,
-      225px 224px,
-      228px 224px,
-      376.5px 364.5px,
-      250px 26px,
-      253px 26px,
-      401.5px 105px,
-      275px 75px,
-      278px 75px,
-      426.5px 180px;
-  }
-  to {
-    background-position:
-      0px 6800px,
-      3px 6800px,
-      151.5px 6917.5px,
-      25px 13632px,
-      28px 13632px,
-      176.5px 13758px,
-      50px 5416px,
-      53px 5416px,
-      201.5px 5491px,
-      75px 17175px,
-      78px 17175px,
-      226.5px 17301.5px,
-      100px 5119px,
-      103px 5119px,
-      251.5px 5221px,
-      125px 8428px,
-      128px 8428px,
-      276.5px 8495px,
-      150px 9876px,
-      153px 9876px,
-      301.5px 9965.5px,
-      175px 13391px,
-      178px 13391px,
-      326.5px 13540.5px,
-      200px 14741px,
-      203px 14741px,
-      351.5px 14848.5px,
-      225px 18770px,
-      228px 18770px,
-      376.5px 18910.5px,
-      250px 5082px,
-      253px 5082px,
-      401.5px 5161px,
-      275px 6375px,
-      278px 6375px,
-      426.5px 6480px;
-  }
-}
 
 /* Cronômetro Flip */
 .countdown-wrapper {
@@ -356,4 +201,141 @@ body, html {
 
 .simple-digit:hover {
   transform: scale(1.05);
+}
+/* Card do título */
+.title-card {
+  width: 650px;
+  height: 80px;
+  background: #07182e;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  margin: 3.8rem auto 1rem auto;
+}
+
+.title-card p {
+  z-index: 2;
+  color: white;
+  font-size: 1.5em;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+  margin: 0;
+  text-align: center;
+}
+
+/* Fundo rotativo com gradiente */
+.title-card::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    #00c3ff 0%,
+    #7b2ff7 25%,
+    #00f2c3 55%,
+    #ffe600 85%,
+    #00c3ff 100%
+  );
+  animation: rotateAnim 5s linear infinite;
+  filter: blur(10px) brightness(1.2);
+  z-index: 0;
+}
+
+/* Máscara interna */
+.title-card::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: #07182e;
+  border-radius: 16px;
+  z-index: 1;
+  box-shadow: inset 0 0 20px rgba(0, 183, 255, 0.1);
+}
+
+/* Overlay de gradiente radial */
+.title-card .gradient-overlay {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, transparent 40%, #07182e 80%);
+  z-index: 1;
+}
+
+/* Animação de rotação */
+@keyframes rotateAnim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+  
+  .loader span {
+    font-size: 50px;
+  }
+  
+  .title-card {
+    width: 90%;
+    max-width: 400px;
+    height: 60px;
+    margin: 2rem auto 1rem auto;
+  }
+  
+  .title-card p {
+    font-size: 1.2em;
+  }
+  
+  .countdown-wrapper {
+    gap: 10px;
+    margin: 1rem 0;
+  }
+  
+  .simple-digit {
+    width: 45px;
+    height: 60px;
+    font-size: 40px;
+  }
+  
+  .flip-label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loader span {
+    font-size: 40px;
+  }
+  
+  .title-card {
+    width: 95%;
+    height: 50px;
+  }
+  
+  .title-card p {
+    font-size: 1em;
+  }
+  
+  .countdown-wrapper {
+    gap: 8px;
+  }
+  
+  .simple-digit {
+    width: 35px;
+    height: 50px;
+    font-size: 30px;
+  }
+  
+  .flip-label {
+    font-size: 10px;
+  }
 }
