@@ -55,7 +55,7 @@ function App() {
       </div>
       <div className="title-card">
         <div className="gradient-overlay"></div>
-        <p>Comming 7/7/2027 as 7:07 pm 💪💪</p>
+        <p>Comming 7/7/2027 as 7:07 pm 💪</p>
       </div>
       <div className="countdown-wrapper">
         <FlipTimer value={timeData.years} label="Anos" />
